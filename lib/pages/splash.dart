@@ -35,7 +35,7 @@ class SplashPageState extends State<SplashPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image(
-            width: 200.0,
+            width: 200,
             image: AssetImage('assets/img/logo.png'),
             fit: BoxFit.cover,
           ),
@@ -44,7 +44,7 @@ class SplashPageState extends State<SplashPage> {
             style: Theme.of(context).textTheme.headline6,
           ),
           Text(
-            'v.: Beta 0.2',
+            'v: Beta 0.2',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 12,
