@@ -16,10 +16,8 @@ class BarBotton extends StatelessWidget {
         //color: Colors.transparent,
         child: Padding(
           padding: const EdgeInsets.only(
-            top: 5.0,
             left: 20.0,
             right: 20.0,
-            bottom: 5.0,
           ),
           child: IconTheme(
             data: IconThemeData(
