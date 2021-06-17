@@ -35,11 +35,7 @@ class SplashPageState extends State<SplashPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image(
-<<<<<<< HEAD
             width: 200.0,
-=======
-            width: 200,
->>>>>>> 8b1ace6485fab8460e0deea9a845bdaf7ecb8355
             image: AssetImage('assets/img/logo.png'),
             fit: BoxFit.cover,
           ),
