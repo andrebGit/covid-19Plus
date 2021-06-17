@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:perguntas/componets/avatarInfo.dart';
+import 'package:perguntas/componets/barBotton.dart';
 import 'package:perguntas/componets/containerHalf.dart';
 import 'package:perguntas/componets/dialog.dart';
 import 'package:perguntas/componets/load.dart';
@@ -49,26 +50,31 @@ class _IndexAppState extends State<IndexApp> {
   var f = FormateNumber();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        //crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          coutry,
-          Padding(
-            padding: const EdgeInsets.only(bottom: 8.0),
-            child: Text('Regiões',
-                style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                )),
+    return Scaffold(
+      bottomNavigationBar: BarBotton(),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            //crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              coutry,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: Text('Regiões',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    )),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  bottom: 10.0,
+                ),
+                child: regions,
+              ),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              bottom: 10.0,
-            ),
-            child: regions,
-          ),
-        ],
+        ),
       ),
     );
   }

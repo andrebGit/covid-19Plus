@@ -29,53 +29,31 @@ class SplashPageState extends State<SplashPage> {
     SystemChrome.setEnabledSystemUIOverlays([]);
 
     return Container(
-      // color: Colors.green,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/img/logo.png'),
-          fit: BoxFit.cover,
-        ),
-      ),
-
+      height: double.infinity,
+      color: Colors.grey[900],
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            margin: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-            padding: const EdgeInsets.fromLTRB(15, 0, 15, 15),
-            decoration: BoxDecoration(
-                // border: Border.all(color: Colors.green),
-                color: Colors.black45),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Text(
-                      'COVID-19 PLUS',
-                      style: TextStyle(
-                        color: Colors.white70,
-                        decoration: TextDecoration.none,
-                        fontSize: 18,
-                      ),
-                    ),
-                    Text(
-                      'Beta: 0.2',
-                      style: TextStyle(
-                        color: Colors.white,
-                        decoration: TextDecoration.none,
-                        fontSize: 13,
-                      ),
-                    ),
-                  ],
-                )
-              ],
+          Image(
+            width: 200.0,
+            image: AssetImage('assets/img/logo.png'),
+            fit: BoxFit.cover,
+          ),
+          Text(
+            'COVID-19 PLUS',
+            style: Theme.of(context).textTheme.headline6,
+          ),
+          Text(
+            'v.: Beta 0.2',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 12,
+              decoration: TextDecoration.none,
+              color: Colors.grey,
             ),
           ),
         ],
       ),
-
       // new Image.asset('assets/splash.jpg', fit: BoxFit.fill),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'componets/barBotton.dart';
+import 'package:perguntas/pages/splash.dart';
+
 import 'pages/indexApp.dart';
 
 void main() {
@@ -33,12 +34,10 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //
-      home: Scaffold(
-        bottomNavigationBar: BarBotton(),
-        body: SingleChildScrollView(
-          child: IndexApp(),
-        ),
-      ),
+      home: SplashPage(),
+      routes: <String, WidgetBuilder>{
+        '/indexApp': (BuildContext context) => new IndexApp()
+      },
     );
   }
 }
