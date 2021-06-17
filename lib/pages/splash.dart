@@ -57,7 +57,7 @@ class SplashPageState extends State<SplashPage> {
                       style: TextStyle(
                         color: Colors.white70,
                         decoration: TextDecoration.none,
-                        //fontSize: ,
+                        fontSize: 18,
                       ),
                     ),
                     Text(
