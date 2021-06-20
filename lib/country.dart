@@ -37,7 +37,8 @@
     }
     return data;
   }
-} */
+}
+ */
 
 class Confirmados {
   String total;

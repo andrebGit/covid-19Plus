@@ -8,6 +8,7 @@ class AvatarInfo extends StatelessWidget {
   final bool load;
   final String img;
   final String title;
+  final String leftTitle;
   final List data;
 
   const AvatarInfo({
@@ -16,6 +17,7 @@ class AvatarInfo extends StatelessWidget {
     @required this.img,
     @required this.title,
     this.data,
+    this.leftTitle = '',
   });
   // const avatarInfo({ Key? key }) : super(key: key);
 
@@ -38,9 +40,14 @@ class AvatarInfo extends StatelessWidget {
               minWidth: -1,
               body: Column(
                 children: [
-                  /* Row(
-                    children: [Text('ok')],
-                  ), */
+                  Row(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(left: 3.0),
+                        child: Text(leftTitle),
+                      ),
+                    ],
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 60.0,

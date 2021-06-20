@@ -81,6 +81,9 @@ class _IndexAppState extends State<IndexApp> {
 
   Future createCountry() async {
     await modelCoutry.getCountry();
+    String dateNow = modelCoutry.dateNowBr;
+
+//    print(dateNow);
 
     List<Widget> containers = [];
     containers.add(ContainerHalf(
@@ -101,9 +104,11 @@ class _IndexAppState extends State<IndexApp> {
         {'title': 'Novos', 'value': f.format(modelCoutry.obitos[0].novos)},
       ],
     ));
+
     loadCautry(AvatarInfo(
       img: 'assets/img/br.png',
       title: 'BRASIL',
+      leftTitle: 'Atualizado\n$dateNow',
       data: containers,
     ));
   }

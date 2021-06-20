@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:perguntas/model/country.dart';
+import 'package:perguntas/country.dart';
 import 'package:perguntas/model/modelRegion.dart';
 
 class ModelCountry {
@@ -11,6 +11,7 @@ class ModelCountry {
   var _sul = [];
   var _centroOeste = [];
   var _norte = [];
+  String _dateNow;
 
   Future getCountry() async {
     var url = Uri.https('xx9p7hp1p7.execute-api.us-east-1.amazonaws.com',
@@ -18,12 +19,21 @@ class ModelCountry {
     var resp = await http.get(url);
     if (resp.statusCode == 200) {
       var respJson = json.decode(resp.body);
+      _dateNow = respJson['dt_updated'].toString();
+      List dateArr = _dateNow.split('T');
+      dateArr = dateArr[0].split('-');
+      dateArr = List.from(dateArr.reversed);
+
+      // print(dateArr);
+      _dateNow = dateArr.join('/');
+
       List<dynamic> confirm = [
         respJson['confirmados'],
       ];
       List<dynamic> obitosArr = [
         respJson['obitos'],
       ];
+
       _confirmados = confirm.map((e) => Confirmados.fromJson(e)).toList();
       _obitos = obitosArr.map((e) => Obitos.fromJson(e)).toList();
     } else {
@@ -37,6 +47,10 @@ class ModelCountry {
 
   List get obitos {
     return _obitos;
+  }
+
+  String get dateNowBr {
+    return _dateNow;
   }
 
   Future getRegion() async {

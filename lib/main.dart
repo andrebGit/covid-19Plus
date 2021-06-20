@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:perguntas/pages/splash.dart';
 
-import 'pages/indexApp.dart';
+import 'package:perguntas/pages/indexApp.dart';
 
 void main() {
   runApp(MyApp());

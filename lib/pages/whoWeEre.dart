@@ -35,7 +35,7 @@ class WhoWeAre extends StatelessWidget {
             ],
           ),
           Text(
-            'Versão Beta 0.1',
+            'Versão Beta 0.2',
             style: stlAll,
           ),
           Padding(
